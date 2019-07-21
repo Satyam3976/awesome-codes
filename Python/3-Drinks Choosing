@@ -1,0 +1,32 @@
+Problem link
+
+https://codeforces.com/problemset/problem/1195/A
+
+Problem Code
+
+import math
+a=input()
+n,k=a.split()
+n=int(n)
+k=int(k)
+v=[]
+for i in range(n):
+    z=int(input())
+    v.append(z)
+v2=[]    
+for i in range(k+1):
+    v2.append(0)
+for i in v:
+    v2[i]=v2[i]+1
+v3=[]  
+sum=0
+for i in range(k+1):
+    v3.append(int(v2[i]/2))
+    sum=sum+int(v2[i]/2)*2
+count=0    
+for i in v3:
+    count=count+i
+b=math.ceil(n/2)    
+temp=b-count
+sum=sum+temp
+print(sum)
