@@ -1,0 +1,9 @@
+Problem Link
+
+https://codeforces.com/contest/1194/problem/A
+
+Problem Code
+
+for _ in range(int(input())):
+    n,k=map(int,input().split())
+    print(2*k)  
