@@ -1,0 +1,16 @@
+Problem Link
+
+https://codeforces.com/problemset/problem/1165/A
+
+Problem code
+
+n,x,y=map(int,input().split())
+a=input()
+count=0
+for i in range(n-x,len(a)):
+    if(i!=n-y-1):
+        if(a[i]=='1'):
+            count+=1
+if(a[n-y-1]=='0'):
+        count+=1
+print(count)        
