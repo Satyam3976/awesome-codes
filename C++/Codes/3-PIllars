@@ -1,0 +1,58 @@
+Problem Link
+
+https://codeforces.com/contest/1197/problem/B
+
+Problem Code
+
+#include <bits/stdc++.h>
+ 
+using namespace std;
+#define ll long long
+#define pb push_back
+ 
+int main()
+{
+	vector<ll>v;
+    ll t;
+    cin>>t;
+   for(ll i=0;i<t;i++)
+   {
+   	ll b;
+   	cin>>b;
+   	v.pb(b);
+   	
+   }
+   ll p=0;
+   ll max=v[0];
+   for(ll i=1;i<t;i++)
+   {
+   	if(v[i]>max)
+   	{
+   		max=v[i];
+   		p=i;
+	}
+   }
+   for(ll i=0;i<p-1;i++)
+   {
+   	if(v[i]>v[i+1])
+   	{
+   		cout<<"NO";
+   		return 0;
+	   }
+	   
+   }
+   for(ll i=p+1;i<t-1;i++)
+   {
+   	if(v[i]<v[i+1])
+   	{
+   		cout<<"NO";
+   		return 0;
+	   }
+	   
+   }
+   cout<<"YES";
+   
+   
+   
+   
+}
