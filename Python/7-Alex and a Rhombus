@@ -1,0 +1,11 @@
+Problem Link
+
+https://codeforces.com/problemset/problem/1180/A
+
+Problem Code
+
+n=int(input())
+sum=1
+for i in range(n):
+    sum=sum+4*i
+print(sum)   
