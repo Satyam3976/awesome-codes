@@ -1,0 +1,92 @@
+Problem Link
+
+https://codeforces.com/contest/1196/problem/B
+
+Problem code
+
+#include <ext/pb_ds/assoc_container.hpp> 
+#include <ext/pb_ds/tree_policy.hpp>  
+#include <functional>
+#include <bits/stdc++.h>
+using namespace __gnu_pbds;
+using namespace std;
+typedef long l;
+typedef long long ll;
+typedef vector<int> vi;
+typedef vector<l> vl;
+typedef vector<long long> vll;
+typedef pair<int,int> pi;
+typedef pair<l,l> pl;
+typedef set<int> si;
+typedef set<l> sl;
+typedef multiset<int> msi;
+typedef multiset<l> msl;
+template <typename T>
+using indexed_set = tree<T, null_type, less<T>, 
+	rb_tree_tag, tree_order_statistics_node_update>;  
+// order_of_key: The number of items in a set that are strictly smaller than k
+// find_by_order: It returns an iterator to the ith largest element
+//Satyam Chaudhary https://github.com/satyam3976
+#define fi first
+#define se second
+#define mp make_pair
+#define pb push_back
+#define lb lower_bound
+#define ub upper_bound
+#define beg(x) x.begin()
+#define en(x) x.end()
+#define all(v) beg(v), en(v)
+#define f(i,s,n) for(l i=s;i<n;i++)
+#define fe(i,s,n) for(l i=s;i<=n;i++)
+#define fr(i,s,n) for(l i=s;i>n;i--)
+#define fre(i,s,n) for(l i=s;i>=n;i--)
+const l MOD = 998244353;
+ 
+int main()
+{
+    ll t;
+    cin>>t;
+    while(t--)
+    {
+        ll n,k;
+        cin>>n>>k;
+        vll v;
+        f(i,0,n)
+        {
+            ll a;
+            cin>>a;
+            v.pb(a);
+        }
+        ll co=0;
+        vll v3;
+        f(i,0,v.size())
+        {
+            if(v[i]%2!=0)
+            {
+                co++;
+                v3.pb(i+1);
+            }
+        }
+            if((co%2!=0 && k%2!=0)||(co%2==0&&k%2==0))
+            {
+                if(k<=co)
+                {
+                    cout<<"YES"<<endl;
+                    ll temp=k-1;
+                    f(i,0,temp)
+                    {
+                        cout<<v3[i]<<" ";
+                    }
+                    cout<<n<<endl;
+                }
+                else{
+                    cout<<"NO"<<endl;
+                }
+            }
+            else{
+                cout<<"NO"<<endl;
+            }
+        
+    }
+}
+ 
